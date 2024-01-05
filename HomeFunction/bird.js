@@ -22,7 +22,7 @@ setInterval(()=>{
         state_bird = 'up';
         console.log('up');
     }
-}, 1500)
+}, 500)
 
 export function actBird(){
 
