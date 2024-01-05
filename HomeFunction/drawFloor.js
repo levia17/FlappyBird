@@ -1,11 +1,11 @@
 // Unit for all
-const unit = 1;
+const unit = 10;
 
 // Declare
 const floor1 = document.querySelector('.floor1');
 const floor2 = document.querySelector('.floor2');
 
-// Access to position left's value
+// Access to floor's attribute value
 const get_floor1 = window.getComputedStyle(floor1);
 const get_floor2 = window.getComputedStyle(floor2);
 
@@ -29,12 +29,17 @@ export function drawWall(){
     floor1.style.left = `${move_x_floor1}px`;
     floor2.style.left = `${move_x_floor2}px`;
 
-    if(move_x_floor1 == -1920){
-        move_x_floor1 = 0;
+    console.log(move_x_floor1);
+    console.log(move_x_floor2);
+
+    requestAnimationFrame(drawWall);
+    // Check and loop floor
+    if(move_x_floor1 <= -1920){
+        move_x_floor1 = 1920;
     }
-    if(move_x_floor2 == -1920){
+    else if(move_x_floor2 <= -1920){
         move_x_floor2 = 1920;
     }
 
-    requestAnimationFrame(drawWall);
 }
+
