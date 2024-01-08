@@ -1,5 +1,5 @@
 // Unit for all
-const unit = 10;
+const unit = 5;
 
 // Declare
 const floor1 = document.querySelector('.floor1');

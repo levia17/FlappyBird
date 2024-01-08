@@ -15,6 +15,26 @@ body{
         width: 1920px;
         height: 911px;
         overflow: hidden;
+
+        // Tittle
+        .title{
+            position: absolute;
+            font-family: Pixelate;
+            font-weight: bold;
+            font-size: 100px;
+            top: 50px;
+            left: 100px;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: -10px;
+            width: 500px;
+            p{
+                text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+                color: #fff;
+            }
+        }
+
+        // Bird
         .bird{
             position: absolute;
             background: url('../component/yellowbird-upflap.png') no-repeat;
@@ -24,6 +44,88 @@ body{
             top: 800px;
             left: 2000px;
         }
+
+        // Button
+        .btn{
+            // border-radius: 5%;
+            display: flex;
+            background-color: rgb(224 97 26);
+            border: 5px solid #fff;
+            width: 300px;
+            height: 100px;
+            justify-content: space-around;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 5px 10px #746214;
+            transition: 0.5s;
+            &:hover{
+                i{  
+                    color: #fff;
+                    font-size: 60px;
+                    margin-left: 120px;
+                }
+                p{
+                    opacity: 0;
+                }
+            }
+            i{
+                color: #fff;
+                font-size: 40px;
+                transition: 0.5s;
+            }
+            p{
+                margin-top: 15px;
+                font-family: Font_pixel;
+                font-size: 25px;
+                font-weight: bold;
+                color: #fff;
+                opacity: 1;
+                transition: 0.5s;
+            }
+            &:active{
+                background-color: rgb(224 97 26);
+                border: 5px solid #fff;
+                transition: 0.1s ease-in-out;
+            }
+        }
+        .btnPlay{
+            position: absolute;
+            left: 200px;
+            top: 250px;
+            &:active{
+                top: 260px;
+                box-shadow: 0 0;
+            }
+        }
+        .btnSetting{
+            position: absolute;
+            left: 200px;
+            top: 450px;
+            &:active{
+                top: 460px;
+                box-shadow: 0 0;
+            }
+        }
+        .btnFB{
+            position: absolute;
+            left: 200px;
+            top: 650px;
+            &:active{
+                top: 660px;
+                box-shadow: 0 0;
+            }
+        }
+        .btnDN{
+            position: absolute;
+            left: 200px;
+            top: 850px;
+            &:active{
+                top: 860px;
+                box-shadow: 0 0;
+            }
+        }
+
+        // Floor
         .floor1{
             position: absolute;
             background: url('../component/floor.png');
@@ -44,3 +146,13 @@ body{
         }
     }
 }   
+
+
+@font-face {
+    font-family: Font_pixel;
+    src: url('../font/font-pixel.ttf');
+}
+@font-face {
+    font-family: Pixelate;
+    src: url("../font/Pixelate.ttf");
+}
