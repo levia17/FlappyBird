@@ -84,38 +84,49 @@ body .backbground_start .btn:active {
 body .backbground_start .btnPlay {
   position: absolute;
   left: 200px;
-  top: 250px;
+  top: 200px;
 }
 body .backbground_start .btnPlay:active {
-  top: 260px;
+  top: 210px;
   box-shadow: 0 0;
 }
 body .backbground_start .btnSetting {
   position: absolute;
   left: 200px;
-  top: 450px;
+  top: 350px;
 }
 body .backbground_start .btnSetting:active {
-  top: 460px;
+  top: 360px;
   box-shadow: 0 0;
 }
 body .backbground_start .btnFB {
   position: absolute;
   left: 200px;
-  top: 650px;
+  top: 500px;
 }
 body .backbground_start .btnFB:active {
-  top: 660px;
+  top: 510px;
   box-shadow: 0 0;
 }
 body .backbground_start .btnDN {
   position: absolute;
   left: 200px;
-  top: 850px;
+  top: 650px;
 }
 body .backbground_start .btnDN:active {
-  top: 860px;
+  top: 660px;
   box-shadow: 0 0;
+}
+body .backbground_start .text_typing {
+  position: absolute;
+  left: 50%;
+  top: 700px;
+  text-shadow: 0 0 10px #0ba017;
+  font-size: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #0ba017;
+  animation: textTyping 4s steps(40) 1s backwards infinite alternate;
 }
 body .backbground_start .floor1 {
   position: absolute;
@@ -143,4 +154,12 @@ body .backbground_start .floor2 {
 @font-face {
   font-family: Pixelate;
   src: url("../font/Pixelate.ttf");
+}
+@keyframes textTyping {
+  0% {
+    max-width: 0;
+  }
+  100% {
+    max-width: 500px;
+  }
 }

@@ -91,22 +91,31 @@ body{
         .btnPlay{
             position: absolute;
             left: 200px;
-            top: 250px;
+            top: 200px;
             &:active{
-                top: 260px;
+                top: 210px;
                 box-shadow: 0 0;
             }
         }
         .btnSetting{
             position: absolute;
             left: 200px;
-            top: 450px;
+            top: 350px;
             &:active{
-                top: 460px;
+                top: 360px;
                 box-shadow: 0 0;
             }
         }
         .btnFB{
+            position: absolute;
+            left: 200px;
+            top: 500px;
+            &:active{
+                top: 510px;
+                box-shadow: 0 0;
+            }
+        }
+        .btnDN{
             position: absolute;
             left: 200px;
             top: 650px;
@@ -115,16 +124,20 @@ body{
                 box-shadow: 0 0;
             }
         }
-        .btnDN{
-            position: absolute;
-            left: 200px;
-            top: 850px;
-            &:active{
-                top: 860px;
-                box-shadow: 0 0;
-            }
-        }
 
+        // Text typing
+        .text_typing{
+            position: absolute;
+            left: 50%;
+            top: 700px;
+            // background-color: #000;
+            text-shadow: 0 0 10px #0ba017;
+            font-size: 20px;
+            overflow: hidden;
+            white-space: nowrap;
+            color: #0ba017;
+            animation: textTyping 4s steps(40) 1s backwards infinite alternate;
+        }
         // Floor
         .floor1{
             position: absolute;
@@ -155,4 +168,13 @@ body{
 @font-face {
     font-family: Pixelate;
     src: url("../font/Pixelate.ttf");
+}
+
+@keyframes textTyping {
+    0%{
+        max-width: 0;
+    }
+    100%{
+        max-width: 500px;
+    }
 }
