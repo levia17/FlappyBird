@@ -1,41 +1,36 @@
 // Declare
 const bird = document.querySelector(".bird");
 
-// Access to bird's attribute value
-const get_bird = window.getComputedStyle(bird);
-
-// Position
-// Top
-const top_bird = get_bird.getPropertyValue("top");
-
-let y_bird = parseFloat(top_bird);
+// Y Bird
+let y_bird = 800;
 // Unit
-const gravity = 2;
-const movement = 50;
+const gravity = 0.2;
+let movement = 0;
 
 // Fix times keyup, keydown
 let count = 0;
 
+// Animation 
 export function animation() {
-  bird.style.top = `${y_bird}px`;
-  y_bird += gravity;
+  movement += gravity;
+  y_bird += movement;
   actBird();
+  bird.style.top = `${800}px`;
   requestAnimationFrame(animation);
 }
 
+// Event press
 function actBird() {
   window.addEventListener("keypress", (button) => {
     count++;
     if (count == 1) {
-      if (button.key == "r") {
-        // console.log("bay");
-        y_bird -= movement;
-        // bird.style.top = `${y_bird}px`;
+      if (button.key == " ") {
+        movement = -5;
       }
     }
   });
   window.addEventListener("keyup", (button) => {
-    if (button.key == "r") {
+    if (button.key == " ") {
       // console.log("bay");
       count = 0;
     }

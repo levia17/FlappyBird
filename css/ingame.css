@@ -23,6 +23,7 @@ body .background .bird {
   height: 100%;
   top: 800px;
   left: 2000px;
+  z-index: 2;
 }
 body .background .floor1 {
   position: absolute;
@@ -32,6 +33,7 @@ body .background .floor1 {
   height: 10%;
   bottom: 0px;
   left: 0px;
+  z-index: 2;
 }
 body .background .floor2 {
   position: absolute;
@@ -41,4 +43,5 @@ body .background .floor2 {
   height: 10%;
   bottom: 0;
   left: 1920px;
+  z-index: 2;
 }
