@@ -17,7 +17,9 @@ export function animation() {
   actBird();
   bird.style.top = `${y_bird}px`;
   requestAnimationFrame(animation);
+  return y_bird;
 }
+
 
 // Event press
 function actBird() {
@@ -36,3 +38,5 @@ function actBird() {
     }
   });
 }
+
+export {y_bird}

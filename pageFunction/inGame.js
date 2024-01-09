@@ -3,7 +3,9 @@ import { drawWall } from "../inGameFunction/drawFloorIG.js";
 // Bird
 import { animation } from "../inGameFunction/birdIG.js";
 // Pipes
-import { pipes, movePipes } from "../inGameFunction/pipesIG.js";
+import { pipes } from "../inGameFunction/pipesIG.js";
+// Collision
+import { collision } from "../inGameFunction/collision.js";
 
 
 // Draw floor
@@ -12,4 +14,6 @@ drawWall();
 animation();
 // Pipes
 pipes();
+// Collision
+collision();
 

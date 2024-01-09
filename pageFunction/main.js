@@ -6,7 +6,7 @@ import { actBird } from "../HomeFunction/bird.js";
 import { clickDN } from "../HomeFunction/donate.js";
 
 // Audio
-import { audioBackgroundStart } from "../audio.js";
+import gameAudio from "../HomeFunction/audio.js";
 
 // Draw Wall
 drawWall();
@@ -18,5 +18,5 @@ actBird();
 clickDN();
 
 // Audio
-// Background Start
-audioBackgroundStart.play();  
+const audioEffects = gameAudio();
+audioEffects.backgroundAudio.play();
