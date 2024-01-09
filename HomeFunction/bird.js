@@ -10,17 +10,17 @@ const top_bird = get_bird.getPropertyValue('top');
 
 let y_bird = parseFloat(top_bird);
 // Unit
-const gravity = 5;
+const gravity = 3;
 
 let state_bird = 'down';
 
 setInterval(()=>{
     if(state_bird == 'up'){
         state_bird = 'down';
-        console.log('down');
+        // console.log('down');
     } else if (state_bird == 'down') {
         state_bird = 'up';
-        console.log('up');
+        // console.log('up');
     }
 }, 500)
 

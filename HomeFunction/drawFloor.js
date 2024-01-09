@@ -29,8 +29,8 @@ export function drawWall(){
     floor1.style.left = `${move_x_floor1}px`;
     floor2.style.left = `${move_x_floor2}px`;
 
-    console.log(move_x_floor1);
-    console.log(move_x_floor2);
+    // console.log(move_x_floor1);
+    // console.log(move_x_floor2);
 
     requestAnimationFrame(drawWall);
     // Check and loop floor
