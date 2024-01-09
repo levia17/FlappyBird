@@ -15,7 +15,7 @@ export function animation() {
   movement += gravity;
   y_bird += movement;
   actBird();
-  bird.style.top = `${800}px`;
+  bird.style.top = `${y_bird}px`;
   requestAnimationFrame(animation);
 }
 
