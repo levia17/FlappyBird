@@ -19,4 +19,6 @@ clickDN();
 
 // Audio
 const audioEffects = gameAudio();
-audioEffects.backgroundAudio.play();
+document.querySelector(".btnPlay").addEventListener("click", () => {
+  audioEffects.backgroundAudio.play();
+});
