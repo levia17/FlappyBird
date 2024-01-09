@@ -121,12 +121,14 @@ body .background_start .text_typing {
   position: absolute;
   left: 50%;
   top: 700px;
+  font-family: Pixelate;
   text-shadow: 0 0 10px #0ba017;
   font-size: 30px;
   overflow: hidden;
   white-space: nowrap;
   color: #0ba017;
-  animation: textTyping 4s steps(80) 1s backwards infinite alternate;
+  border-right: 10px solid #0ba017;
+  animation: textTyping 4s steps(80) 1s backwards infinite alternate, blink_caret 0.5s steps(80) infinite;
 }
 body .background_start .showDNHidden {
   display: none;
@@ -206,5 +208,14 @@ body .background_start .floor2 {
   }
   100% {
     scale: 1;
+  }
+}
+/* The typewriter cursor effect */
+@keyframes blink_caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #0ba017;
   }
 }
