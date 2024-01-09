@@ -40,7 +40,7 @@ function createPipes() {
   document.querySelector("body .background").appendChild(pipe2);
 
   pipes_list.push(pipe1, pipe2);
-  console.log(pipes_list);
+  // console.log(pipes_list);
 }
 
 // Unit movement
