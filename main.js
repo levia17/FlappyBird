@@ -1,10 +1,12 @@
+// Animation
 import { drawWall } from "./HomeFunction/drawFloor.js";
 import { actBird } from "./HomeFunction/bird.js";
 
 // Event click
 import { clickDN } from "./HomeFunction/donate.js";
 
-// Declare
+// Audio
+import { audioBackgroundStart } from "./audio.js";
 
 // Draw Wall
 drawWall();
@@ -15,3 +17,6 @@ actBird();
 // Event click
 clickDN();
 
+// Audio
+// Background Start
+audioBackgroundStart.play();
