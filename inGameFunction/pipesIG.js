@@ -1,22 +1,21 @@
 // List
-let pipes_list = [];
+export let pipes_list = [];
 
 const height = ["450", "500", "550", "600", "650", "700", "750", "800"];
+
+/**************************************************************/
 
 // Pipes
 export function pipes() {
   movePipes();
 }
 
-setInterval(()=>{
-    createPipes()
-}, 1500);
-
 // Create
-function createPipes() {
+export function createPipes() {
   const randomIH = Math.floor(Math.random() * 8);
 
   const pipe1 = document.createElement("div");
+  pipe1.className = 'pipe1';
   pipe1.style.background = "url('../component/pipe-green.png')";
   pipe1.style.scale = "2";
   pipe1.style.height = "253px";
@@ -28,6 +27,7 @@ function createPipes() {
   document.querySelector("body .background").appendChild(pipe1);
 
   const pipe2 = document.createElement("div");
+  pipe1.className = 'pipe2';
   pipe2.style.background = "url('../component/pipe-green.png')";
   pipe2.style.scale = "-2";
   pipe2.style.height = "253px";
@@ -45,12 +45,13 @@ function createPipes() {
 
 // Unit movement
 const x_pipe = 3;
-export function movePipes() {
+function movePipes() {
   for (let i in pipes_list) {
-    pipes_list[i].style.left = `${parseInt(pipes_list[i].style.left) - x_pipe}px`;
+    pipes_list[i].style.left = `${
+      parseInt(pipes_list[i].style.left) - x_pipe
+    }px`;
+    if(pipes_list[i].style.left <= 1200){
+      console.log('remove');
+    }
   }
-
-  requestAnimationFrame(movePipes);
 }
-
-

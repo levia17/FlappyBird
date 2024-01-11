@@ -19,6 +19,7 @@ let move_x_floor1 = parseFloat(left_floor1);
 let move_x_floor2 = parseFloat(left_floor2);
 
 
+
 // ********************************************************** //
 export function drawWall(){
 
@@ -32,7 +33,6 @@ export function drawWall(){
     // console.log(move_x_floor1);
     // console.log(move_x_floor2);
 
-    requestAnimationFrame(drawWall);
     // Check and loop floor
     if(move_x_floor1 <= -1920){
         move_x_floor1 = 1920;
