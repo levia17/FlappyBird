@@ -44,11 +44,12 @@ export function createPipes() {
 }
 
 // Unit movement
-const x_pipe = 3;
+const minus_x_pipe = 7;
+
 function movePipes() {
   for (let i in pipes_list) {
     pipes_list[i].style.left = `${
-      parseInt(pipes_list[i].style.left) - x_pipe
+      parseInt(pipes_list[i].style.left) - minus_x_pipe
     }px`;
     if(pipes_list[i].style.left <= 1200){
       console.log('remove');
