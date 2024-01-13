@@ -38,7 +38,7 @@ function eatingPoint(){
         
         if(pipeRect.left <= birdRect.left + 10 && pipeRect.left >= birdRect.left + 5){
             score_inner += 0.5;
-            console.log('eatingPoint!');
+            // console.log('eatingPoint!');
         }
     }
     return score_inner;

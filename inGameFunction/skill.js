@@ -27,15 +27,18 @@ function checkCooldown(){
 
 
 function skil1(){
+    console.log('Acitve Skill1'); 
     window.addEventListener('keydown', (button)=>{
-        if(button.key == 'e'){
-            cooldown = 0;
+        if(button.key == 'e' && localStorage.getItem('gameState') != 'inShield'){
             checkCooldown();
             setState('inShield');
+            console.log('Skilling')
             setTimeout(()=>{
+                cooldown = 0;
                 setState('playing');
+                setGame();
             }, 2000) 
         }
-    }, {once: true})
+    })
     return cooldown;
 }

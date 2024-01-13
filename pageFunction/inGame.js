@@ -33,7 +33,6 @@ const btnRestart = document.querySelector(".btnRestart");
 
 /*********************FEATURE********************************/
 
-skill();
 /*PRESS*/
 // Press to start
 window.addEventListener("keydown", (button) => {
@@ -43,6 +42,7 @@ window.addEventListener("keydown", (button) => {
       setState("playing");
       isPlaying = State();
       setGame();
+      skill();
     }
   }
 });
@@ -104,6 +104,7 @@ function inGame() {
 
 // Statement
 export function setGame() {
+  isPlaying = State();
   if (isPlaying == "playing") {
     // Loop game
     inGame();
