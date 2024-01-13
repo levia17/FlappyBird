@@ -17,28 +17,27 @@ actBird();
 // Event click
 clickDN();
 
-// Audio
-const audioEffects = gameAudio();
 
-async function soundBackground() {
+
+const audioEffect = gameAudio();
+
+// Function to handle user interaction and play background audio
+async function playBackgroundAudio() {
   try {
-    // Wait for the audio to load
-    await audioEffects.backgroundAudio.load();
+    // Load the audio
+    await audioEffect.backgroundAudio.load();
 
-    // Add an event listener to check when the audio is loaded
-    audioEffects.backgroundAudio.addEventListener('canplaythrough', () => {
-      // Play the audio after it's loaded
-      audioEffects.backgroundAudio.click();;
+    // Wait for a user interaction event (e.g., click)
+    await new Promise((resolve) => {
+      document.addEventListener('click', resolve, { once: true });
     });
 
-    // Handle errors during loading or playing
-    audioEffects.backgroundAudio.addEventListener('error', (error) => {
-      console.error('Error loading or playing background audio:', error);
-    });
+    // Play the audio after user interaction
+    await audioEffect.backgroundAudio.play();
   } catch (error) {
-    console.error('Error in soundBackground:', error);
+    console.error('Error playing background audio:', error);
   }
 }
 
-soundBackground();
-
+// Call the function to set up user interaction and play audio
+playBackgroundAudio();
