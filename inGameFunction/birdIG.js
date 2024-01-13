@@ -1,5 +1,6 @@
   // Declare
   export const bird = document.querySelector(".bird");
+  const bird_rotate = document.querySelector('.bird img')
 
   // Y Bird
   let y_bird = 800;
@@ -16,6 +17,7 @@
     movement += gravity;
     y_bird += movement;
     actBird();
+    bird_rotate.style.rotate = `${(movement/20)}rad`;
     bird.style.top = `${y_bird}px`;
     return y_bird;
   }

@@ -62,7 +62,7 @@ body .background .overlay .gameOver.show {
   border: 5px solid #fff;
   border-radius: 5%;
   width: 500px;
-  height: 400px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,9 +78,23 @@ body .background .overlay .gameOver.show p {
 body .background .overlay .gameOver.show .ds_highest_score {
   margin-top: 80px;
 }
+body .background .overlay .gameOver.show .btnRestart {
+  display: flex;
+  background-color: #e0611a;
+  border: 5px solid #fff;
+  width: 200px;
+  height: 50px;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 5px 10px #746214;
+  transition: 0.5s;
+  color: #fff;
+  font-family: flappy_bird;
+  font-size: 30px;
+}
 body .background .bird {
   position: absolute;
-  background: url("../component/yellowbird-upflap.png") no-repeat;
   scale: 2;
   width: 100%;
   height: 100%;

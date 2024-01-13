@@ -22,14 +22,14 @@ function checkCollision() {
     ) {
       // console.log("Collision!");
       setState("over");
-      document.querySelector('.gameOver').classList.toggle('show');
+      document.querySelector('.gameOver').setAttribute('class', 'gameOver show');
     }
 
     // Collision with floor
     if (y_bird >= 1209) {
       // console.log("Collision!");
       setState("over");
-      document.querySelector('.gameOver').classList.toggle('show');
+      document.querySelector('.gameOver').setAttribute('class', 'gameOver show');
     }
   }
 }

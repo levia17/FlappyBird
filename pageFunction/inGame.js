@@ -22,6 +22,8 @@ let count = 0;
 
 // Button pause
 const btnPause = document.querySelector(".btnPause");
+// Button Restart
+const btnRestart = document.querySelector('.btnRestart');
 
 /*********************FEATURE********************************/
 
@@ -37,6 +39,12 @@ window.addEventListener("keydown", (button) => {
     }
   }
 });
+btnRestart.addEventListener('click', ()=>{
+  location.reload();
+})
+
+
+
 // Press to pause
 btnPause.addEventListener("click", () => {
   setState("pause");
