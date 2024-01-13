@@ -19,5 +19,14 @@ clickDN();
 
 // Audio
 const audioEffects = gameAudio();
-audioEffects.backgroundAudio.play();
+
+async function soundBackground(){
+  try{
+    await audioEffects.backgroundAudio.play();
+  }
+  catch(error){
+    console.log(error);
+  }
+}
+soundBackground();
 

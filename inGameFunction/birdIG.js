@@ -34,6 +34,7 @@
       count++;
       if (count == 1) {
         if (button.key == " ") {
+          audioEffect.wingSound.currentTime = 0;
           audioEffect.wingSound.play();
           movement = -5;
         }
