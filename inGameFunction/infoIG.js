@@ -11,7 +11,7 @@ const highest_score = document.querySelector('.highest_score');
 
 // Stage
 const stage = document.querySelector('.stage')
-let stage_inner = 2;
+let stage_inner = 1;
 
 // Saving highest score during playing
 const STORAGE_key = 'highest_score';

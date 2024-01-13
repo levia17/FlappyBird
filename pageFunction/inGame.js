@@ -10,6 +10,8 @@ import { collision } from "../inGameFunction/collision.js";
 import { setState, State } from "../database/gameState.js";
 // Info Ingame
 import { disInfo } from "../inGameFunction/infoIG.js";
+// Skill
+import { skill } from "../inGameFunction/skill.js";
 
 // Variable game's statement
 export let isPlaying = State();
@@ -23,7 +25,11 @@ let count = 0;
 // Button pause
 const btnPause = document.querySelector(".btnPause");
 // Button Restart
-const btnRestart = document.querySelector('.btnRestart');
+const btnRestart = document.querySelector(".btnRestart");
+
+
+
+skill();
 
 /*********************FEATURE********************************/
 
@@ -39,9 +45,10 @@ window.addEventListener("keydown", (button) => {
     }
   }
 });
-btnRestart.addEventListener('click', ()=>{
+// Press to restart
+btnRestart.addEventListener("click", () => {
   location.reload();
-})
+});
 
 // Event unfocus screen
 document.addEventListener("visibilitychange", handleVisibilityChange, {
@@ -55,8 +62,6 @@ function handleVisibilityChange() {
     count = 0;
   }
 }
-
-
 
 // Press to pause
 btnPause.addEventListener("click", () => {
