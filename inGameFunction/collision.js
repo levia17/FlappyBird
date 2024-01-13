@@ -1,10 +1,14 @@
 import { y_bird, bird } from "./birdIG.js";
 import { pipes_list } from "./pipesIG.js";
 import { setState } from "../database/gameState.js";
+import gameAudio from "./audio.js";
 
 export function collision() {
   checkCollision();
 }
+
+// Audio
+const audioEffect = gameAudio();
 
 function checkCollision() {
   for (let i in pipes_list) {
@@ -21,12 +25,14 @@ function checkCollision() {
       pipeRect.bottom >= birdRect.top
     ) {
       // console.log("Collision!");
+      audioEffect.hitSound.play();
       setState("over");
       document.querySelector('.gameOver').setAttribute('class', 'gameOver show');
     }
 
     // Collision with floor
     if (y_bird >= 1209) {
+      audioEffect.dieSound.play();
       // console.log("Collision!");
       setState("over");
       document.querySelector('.gameOver').setAttribute('class', 'gameOver show');

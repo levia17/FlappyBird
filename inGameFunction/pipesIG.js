@@ -48,13 +48,20 @@ export function createPipes() {
   // console.log(pipes_list);
 }
 
+
 // Unit movement
 export let minus_x_pipe = 7;
-
 function movePipes() {
   if(stage.textContent == 1){
-    minus_x_pipe == 10;
+    minus_x_pipe = 10;
+  } else if (stage.textContent == 2){
+    for (let i in pipes_list) {
+      pipes_list[i].style.top = `${
+        pipes_list[i].style.top - 1
+      }px`;
   }
+}
+
   for (let i in pipes_list) {
     pipes_list[i].style.left = `${
       parseInt(pipes_list[i].style.left) - minus_x_pipe

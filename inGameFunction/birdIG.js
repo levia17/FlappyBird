@@ -1,3 +1,5 @@
+  import gameAudio from "./audio.js";
+  
   // Declare
   export const bird = document.querySelector(".bird");
   const bird_rotate = document.querySelector('.bird img')
@@ -10,6 +12,10 @@
 
   // Fix times keyup, keydown
   let count = 0;
+
+
+  // Audio
+  const audioEffect = gameAudio();
 
 
   // Animation
@@ -28,6 +34,7 @@
       count++;
       if (count == 1) {
         if (button.key == " ") {
+          audioEffect.wingSound.play();
           movement = -5;
         }
       }
