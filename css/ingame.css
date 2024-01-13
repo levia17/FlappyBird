@@ -15,6 +15,69 @@ body .background {
   width: 1920px;
   height: 911px;
 }
+body .background .infoGame {
+  position: absolute;
+  top: 20px;
+  left: 200px;
+  width: 500px;
+  height: 100px;
+}
+body .background .infoGame .score_text {
+  font-family: flappy_bird;
+  font-size: 60px;
+  color: #fff;
+}
+body .background .infoGame .score_text .score {
+  display: inline;
+  font-family: flappy_bird;
+  font-size: 60px;
+  color: #fff;
+}
+body .background .btnPause {
+  position: absolute;
+  border: 5px solid #fff;
+  border-radius: 5%;
+  top: 20px;
+  left: 20px;
+  width: 70px;
+  height: 70px;
+  background-color: #e0611a;
+  cursor: pointer;
+}
+body .background .btnPause i {
+  text-align: center;
+  font-size: 3rem;
+  position: absolute;
+  top: 10%;
+  left: 25%;
+}
+body .background .overlay .gameOver {
+  display: none;
+}
+body .background .overlay .gameOver.show {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  background-color: #e0611a;
+  border: 5px solid #fff;
+  border-radius: 5%;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+  animation: appear 1s;
+}
+body .background .overlay .gameOver.show p {
+  color: #fff;
+  font-family: flappy_bird;
+  font-size: 30px;
+}
+body .background .overlay .gameOver.show .ds_highest_score {
+  margin-top: 80px;
+}
 body .background .bird {
   position: absolute;
   background: url("../component/yellowbird-upflap.png") no-repeat;
@@ -44,4 +107,17 @@ body .background .floor2 {
   bottom: 0;
   left: 1920px;
   z-index: 2;
+}
+
+@font-face {
+  font-family: flappy_bird;
+  src: url("../font/04B_19.TTF");
+}
+@keyframes appear {
+  0% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
 }

@@ -9,6 +9,10 @@ export function setState(state) {
     localStorage.setItem(STORAGE_key, "over");
     // return localStorage.getItem(STORAGE_key);
   }
+  else if (state == "pause") {
+    localStorage.setItem(STORAGE_key, "pause");
+    // return localStorage.getItem(STORAGE_key);
+  }
 }
 
 export function State() {

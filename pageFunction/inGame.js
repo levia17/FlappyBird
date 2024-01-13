@@ -8,15 +8,24 @@ import { pipes, createPipes } from "../inGameFunction/pipesIG.js";
 import { collision } from "../inGameFunction/collision.js";
 // Game state
 import { setState, State } from "../database/gameState.js";
+// Info Ingame
+import { disScore } from "../inGameFunction/infoIG.js";
 
 // Variable game's statement
 export let isPlaying = State();
 
+// Timing spawn of pipes
 let interval = null;
 
-// Count playing
+// Variable count for playing
 let count = 0;
 
+// Button pause
+const btnPause = document.querySelector(".btnPause");
+
+/*********************FEATURE********************************/
+
+/*PRESS*/
 // Press to start
 window.addEventListener("keydown", (button) => {
   if (button.key == " ") {
@@ -28,12 +37,15 @@ window.addEventListener("keydown", (button) => {
     }
   }
 });
+// Press to pause
+btnPause.addEventListener("click", () => {
+  setState("pause");
+  isPlaying = State();
+  setGame();
+  count = 0;
+});
 
-setInterval(() => {
-  console.log(isPlaying);
-}, 1000);
-
-
+/*ANIMATION GAME*/
 // Function to active game
 function inGame() {
   // Collision
@@ -46,9 +58,20 @@ function inGame() {
   pipes();
 
   isPlaying = State();
+
+  /*Info Ingame*/
+  // Score
+  disScore();
+
+  // Variable requestAnimationFrame
   const rq = requestAnimationFrame(inGame);
-  if (isPlaying == "over") {
+
+  // Check in loop game if isPlaying is over
+  if (isPlaying != "playing") {
+    // Clear loop game
     cancelAnimationFrame(rq);
+
+    // Check game's state
     setGame();
   }
 }
@@ -56,13 +79,20 @@ function inGame() {
 // Statement
 function setGame() {
   if (isPlaying == "playing") {
+    // Loop game
     inGame();
-    
+
+    // timing spawn pipes
     interval = setInterval(() => {
       createPipes();
     }, 1300);
-  }
-  else{
+  } else {
+    // Clear timing spawn pipes
     clearInterval(interval);
   }
 }
+
+// Test (skipping)
+setInterval(() => {
+  console.log(isPlaying);
+}, 1000);

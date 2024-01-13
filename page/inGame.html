@@ -17,12 +17,21 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="../css/ingame.css">
     </head>
 
     <body>
         <div class="background">
-            <div class="test" style="width: 10px;height: 10px; background-color: #fff; position: absolute; left: 1044px;"></div>
+            <div class="infoGame"><div class="score_text">SCORE: <p class="score"></p></div></div>
+            <div class="btnPause"><i class="fa-solid fa-pause" style="color: #ffffff;"></i></div>
+            <div class="overlay">
+                <div class="gameOver">
+                    <p class="ds_score">Score: <p class="score"></p></p>
+                    <img src="../component/gameover.png" alt="gameOver">
+                    <p class="ds_highest_score">Highest score: <p class="highest_score"></p></p>
+                </div>
+            </div>
             <div class="bird"></div>
             <div class="floor1"></div>
             <div class="floor2"></div>

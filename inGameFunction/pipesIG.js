@@ -52,7 +52,7 @@ function movePipes() {
       parseInt(pipes_list[i].style.left) - minus_x_pipe
     }px`;
     if(pipes_list[i].style.left <= 1200){
-      console.log('remove');
+      // console.log('remove');
     }
   }
 }

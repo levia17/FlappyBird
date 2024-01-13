@@ -20,14 +20,16 @@ function checkCollision() {
       pipeRect.top <= birdRect.bottom - 1775 &&
       pipeRect.bottom >= birdRect.top
     ) {
-      console.log("Collision!");
+      // console.log("Collision!");
       setState("over");
+      document.querySelector('.gameOver').classList.toggle('show');
     }
 
     // Collision with floor
     if (y_bird >= 1209) {
-      console.log("Collision!");
+      // console.log("Collision!");
       setState("over");
+      document.querySelector('.gameOver').classList.toggle('show');
     }
   }
 }

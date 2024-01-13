@@ -44,7 +44,7 @@ body .background_start .bird {
 }
 body .background_start .btn {
   display: flex;
-  background-color: rgb(224, 97, 26);
+  background-color: #e0611a;
   border: 5px solid #fff;
   width: 300px;
   height: 100px;
@@ -77,7 +77,7 @@ body .background_start .btn p {
   transition: 0.1s;
 }
 body .background_start .btn:active {
-  background-color: rgb(224, 97, 26);
+  background-color: #e0611a;
   border: 5px solid #fff;
   transition: 0.1s ease-in-out;
 }
