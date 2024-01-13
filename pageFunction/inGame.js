@@ -9,7 +9,7 @@ import { collision } from "../inGameFunction/collision.js";
 // Game state
 import { setState, State } from "../database/gameState.js";
 // Info Ingame
-import { disScore } from "../inGameFunction/infoIG.js";
+import { disInfo } from "../inGameFunction/infoIG.js";
 
 // Variable game's statement
 export let isPlaying = State();
@@ -43,6 +43,19 @@ btnRestart.addEventListener('click', ()=>{
   location.reload();
 })
 
+// Event unfocus screen
+document.addEventListener("visibilitychange", handleVisibilityChange, {
+  once: true,
+});
+
+// Event
+function handleVisibilityChange() {
+  if (document.hidden) {
+    setState("paused");
+    count = 0;
+  }
+}
+
 
 
 // Press to pause
@@ -68,8 +81,7 @@ function inGame() {
   isPlaying = State();
 
   /*Info Ingame*/
-  // Score
-  disScore();
+  disInfo();
 
   // Variable requestAnimationFrame
   const rq = requestAnimationFrame(inGame);

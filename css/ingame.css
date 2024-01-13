@@ -22,12 +22,12 @@ body .background .infoGame {
   width: 500px;
   height: 100px;
 }
-body .background .infoGame .score_text {
+body .background .infoGame .info_text {
   font-family: flappy_bird;
   font-size: 60px;
   color: #fff;
 }
-body .background .infoGame .score_text .score {
+body .background .infoGame .info_text .info {
   display: inline;
   font-family: flappy_bird;
   font-size: 60px;

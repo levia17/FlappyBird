@@ -1,7 +1,12 @@
+
+
+
 // List
 export let pipes_list = [];
 
 const height = ["450", "500", "550", "600", "650", "700", "750", "800"];
+
+const stage = document.querySelector('.stage');
 
 /**************************************************************/
 
@@ -44,9 +49,12 @@ export function createPipes() {
 }
 
 // Unit movement
-const minus_x_pipe = 7;
+export let minus_x_pipe = 7;
 
 function movePipes() {
+  if(stage.textContent == 1){
+    minus_x_pipe == 10;
+  }
   for (let i in pipes_list) {
     pipes_list[i].style.left = `${
       parseInt(pipes_list[i].style.left) - minus_x_pipe

@@ -9,15 +9,23 @@ const score_ov = document.querySelector('.gameOver .score');
 let score_inner = 0;
 const highest_score = document.querySelector('.highest_score');
 
+// Stage
+const stage = document.querySelector('.stage')
+let stage_inner = 0;
+
 // Saving highest score during playing
 const STORAGE_key = 'highest_score';
 // let highest_score = 0;
 
-export function disScore(){
+
+
+export function disInfo(){
     eatingPoint();
     compareScore();
+    updateStage();
     score.innerHTML = score_inner;
     score_ov.innerHTML = score_inner;
+    stage.innerHTML = parseInt(stage_inner);
 }
 
 
@@ -43,5 +51,11 @@ function compareScore(){
         localStorage.setItem(STORAGE_key, score_inner);
     }
     highest_score.innerHTML = localStorage.getItem('highest_score');
+}
+
+function updateStage(){
+    if (score_inner % 10 == 0 && score_inner != 0){
+        stage_inner += 0.015;
+    }
 }
 
