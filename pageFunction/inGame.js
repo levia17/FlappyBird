@@ -29,10 +29,11 @@ const btnRestart = document.querySelector(".btnRestart");
 
 
 
-skill();
+
 
 /*********************FEATURE********************************/
 
+skill();
 /*PRESS*/
 // Press to start
 window.addEventListener("keydown", (button) => {
@@ -66,7 +67,6 @@ function handleVisibilityChange() {
 // Press to pause
 btnPause.addEventListener("click", () => {
   setState("pause");
-  isPlaying = State();
   setGame();
   count = 0;
 });
@@ -82,6 +82,7 @@ function inGame() {
   animation();
   // Pipes
   pipes();
+  
 
   isPlaying = State();
 
@@ -102,7 +103,7 @@ function inGame() {
 }
 
 // Statement
-function setGame() {
+export function setGame() {
   if (isPlaying == "playing") {
     // Loop game
     inGame();
@@ -119,5 +120,6 @@ function setGame() {
 
 // Test (skipping)
 setInterval(() => {
+  isPlaying = State();
   console.log(isPlaying);
 }, 1000);
