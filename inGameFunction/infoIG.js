@@ -55,7 +55,7 @@ function compareScore(){
 
 function updateStage(){
     if (score_inner % 10 == 0 && score_inner != 0){
-        stage_inner += 0.015;
+        stage_inner += 0.014;
     }
 }
 

@@ -1,7 +1,7 @@
 // Floor
 import { drawWall } from "../inGameFunction/drawFloorIG.js";
 // Bird
-import { animation } from "../inGameFunction/birdIG.js";
+import { animation, flap } from "../inGameFunction/birdIG.js";
 // Pipes
 import { pipes, createPipes } from "../inGameFunction/pipesIG.js";
 // Collision
@@ -43,6 +43,7 @@ window.addEventListener("keydown", (button) => {
       isPlaying = State();
       setGame();
       skill();
+      flap();
     }
   }
 });
@@ -70,6 +71,11 @@ btnPause.addEventListener("click", () => {
   setGame();
   count = 0;
 });
+
+
+
+
+let time = 1300;
 
 /*ANIMATION GAME*/
 // Function to active game
@@ -109,6 +115,7 @@ export function setGame() {
     // Loop game
     inGame();
 
+    
     // timing spawn pipes
     interval = setInterval(() => {
       createPipes();
