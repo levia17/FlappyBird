@@ -26,6 +26,12 @@ let count = 0;
 const btnPause = document.querySelector(".btnPause");
 // Button Restart
 const btnRestart = document.querySelector(".btnRestart");
+// Guide
+const guide = document.querySelector('.guide');
+
+
+
+
 
 
 
@@ -39,6 +45,7 @@ window.addEventListener("keydown", (button) => {
   if (button.key == " ") {
     count++;
     if (count == 1) {
+      guide.setAttribute('class', 'guideHidden')
       setState("playing");
       isPlaying = State();
       setGame();
@@ -80,8 +87,12 @@ let time = 1300;
 /*ANIMATION GAME*/
 // Function to active game
 function inGame() {
-  // Collision
-  collision();
+  isPlaying = State();
+
+  if(isPlaying == 'playing'){
+    // Collision
+    collision();
+  }
   // Draw floor
   drawWall();
   // Bird
@@ -90,7 +101,6 @@ function inGame() {
   pipes();
   
 
-  isPlaying = State();
 
   /*Info Ingame*/
   disInfo();
@@ -99,7 +109,7 @@ function inGame() {
   const rq = requestAnimationFrame(inGame);
 
   // Check in loop game if isPlaying is over
-  if (isPlaying != "playing") {
+  if (isPlaying == 'pause' || isPlaying == 'over') {
     // Clear loop game
     cancelAnimationFrame(rq);
 
@@ -111,16 +121,21 @@ function inGame() {
 // Statement
 export function setGame() {
   isPlaying = State();
-  if (isPlaying == "playing") {
+  count++;
+  if (isPlaying == "playing" || isPlaying == 'inShield') {
     // Loop game
     inGame();
 
+    console.log(count);
     
-    // timing spawn pipes
-    interval = setInterval(() => {
-      createPipes();
-    }, 1300);
-  } else {
+    if(count <= 2){
+      // timing spawn pipes
+      interval = setInterval(() => {
+        createPipes();
+      }, 1300);
+    }
+  }
+  else {
     // Clear timing spawn pipes
     clearInterval(interval);
   }

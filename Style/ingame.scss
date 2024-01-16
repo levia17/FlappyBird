@@ -13,6 +13,32 @@ body {
     background: url("../component/background_Start.png");
     width: 1920px;
     height: 911px;
+    // Guide
+    .guideHidden{
+      display: none;
+    }
+    .guide{
+      display: block;
+      position: absolute;
+      left: 40%;
+      bottom: 50%;
+      font-family: Pixelate;
+      font-size: 2rem;
+      font-weight: bold;
+      .button{
+        text-align: center;
+        border-radius: 3%;
+        position: absolute;
+        background-color: #fff;
+        top: 50px;
+        width: 26rem;
+        height: 3rem;
+        color: #fff;
+        text-shadow: 0 0 5px #000;
+        box-shadow: 5px 5px 2px #000;
+        animation: press 0.5s alternate infinite;
+      }
+    }
     // Info
     .infoGame{
       position: absolute;
@@ -104,6 +130,17 @@ body {
       top: 800px;
       left: 2000px;
       z-index: 2;
+      .shield {
+        position: absolute;
+        top: -15px;
+        left: -10px;
+        background: url("../component/inshield.png");
+        background-size: cover;
+        width: 55px;
+        height: 55px;
+        visibility: hidden;
+        animation: shield 0.1s alternate backwards infinite;
+      }
     }
     // Floor
     .floor1 {
@@ -132,6 +169,32 @@ body {
 @font-face {
   font-family: flappy_bird;
   src: url('../font/04B_19.TTF');
+}
+
+@font-face {
+  font-family: Pixelate;
+  src: url('../font/Pixelate.ttf');
+}
+
+
+@keyframes press {
+  0%{
+    box-shadow: 5px 5px 2px #000;
+    top: 50px;
+  }
+  100%{
+    top: 55px;
+    box-shadow: 0 0;
+  }
+}
+
+@keyframes shield {
+  0%{
+    rotate: 0rad;
+  }
+  100%{
+    rotate: 1rad;
+  }
 }
 
 @keyframes appear {
